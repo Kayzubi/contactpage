@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome kit -->
+    <script
+      src="https://kit.fontawesome.com/62765ee528.js"
+      crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Contact Us | Zaviercard</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar-primary">
+        <div class="container">
+          <a href="index.html" class="navbar__logo">Zaviercard</a>
+          <div class="navbar-collapse">
+            <ul class="navbar__links">
+              <li class="nav-item">
+                <a href="#" class="nav-link"></a>Features
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link"></a>Products
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link active"></a>Contact Us
+              </li>
+            </ul>
+            <a href="#" class="btn btn-transparent">Log In</a>
+            <a href="#" class="btn btn-secondary">Sign Up</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contact us section -->
+    <section id="contactus">
+      <div class="container">
+        <div class="row">
+          <div class="col-6-lg col-12-md">
+            <h2 class="heading-secondary text-primary">Contact Us</h2>
+            <p class="text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+              veniam animi dignissimos quibusdam totam hic veritatis nihil
+              repellat nostrum voluptates.
+            </p>
+            <form action="#" class="form contact-form">
+              <div class="form__group">
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  class="form__input"
+                  placeholder="First name"
+                  required />
+                <label for="firstname" class="form__label">First name</label>
+              </div>
+              <div class="form__group">
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  class="form__input"
+                  placeholder="Last name"
+                  required />
+                <label for="lastname" class="form__label">Last name</label>
+              </div>
+              <div class="form__group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form__input"
+                  placeholder="Email"
+                  required />
+                <label for="email" class="form__label">Email</label>
+              </div>
+              <div class="form__group">
+                <input
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  class="form__input"
+                  placeholder="Phone number"
+                  required />
+                <label for="phone" class="form__label">Phone number</label>
+              </div>
+              <div class="form__group">
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="50"
+                  rows="10"
+                  placeholder="Your message here"
+                  class="form__input"
+                  required></textarea>
+                <label for="message" class="form__label">Leave a message</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit">
+                Submit
+              </button>
+            </form>
+          </div>
+          <div class="col-6-lg col-12-md">
+            <h2 class="heading-secondary text-primary">
+              Messages <span class="message-count">(0)</span>
+            </h2>
+            <table class="table table-hover">
+              <thead class="thead text-primary">
+                <tr>
+                  <th>Full name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody id="tbody" class="font-sm"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer bg-primary-dark-3 text-white">
+      <div class="container">
+        <div class="row gap-3 pt-5 pb-5">
+          <div class="col-3-lg col-6-md col-12-sm">
+            <a href="index.html" class="footer__logo">Zaviercard</a>
+            <p class="footer__note mt-2 font-sm">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab et,
+              eos non deleniti ad necessitatibus quae soluta illo delectus ea.
+            </p>
+          </div>
+          <div class="col-3-lg col-6-md col-12-sm">
+            <h4 class="heading">Zaviercard</h4>
+            <ul class="site__map">
+              <li class="map-item"><a href="#" class="map-link">Product</a></li>
+              <li class="map-item">
+                <a href="#" class="map-link">Features</a>
+              </li>
+              <li class="map-item">
+                <a href="#" class="map-link">How it Works</a>
+              </li>
+              <li class="map-item"><a href="#" class="map-link">Login</a></li>
+            </ul>
+          </div>
+          <div class="col-3-lg col-6-md col-12-sm">
+            <h4 class="heading">Company</h4>
+            <ul class="site__map">
+              <li class="map-item">
+                <a href="#" class="map-link">About Us</a>
+              </li>
+              <li class="map-item"><a href="#" class="map-link">Careers</a></li>
+              <li class="map-item">
+                <a href="#" class="map-link">Meet the team</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3-lg col-6-md col-12-sm">
+            <h4 class="heading">Help and support</h4>
+            <ul class="site__map-list">
+              <li class="map-item"><a href="#" class="map-link">Support</a></li>
+              <li class="map-item">
+                <a href="#" class="map-link">Contact Us</a>
+              </li>
+              <li class="map-item">
+                <a href="#" class="map-link">Privacy policy</a>
+              </li>
+              <li class="map-item">
+                <a href="#" class="map-link">Terms and Conditions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__lower bg-primary-dark-5">
+        <div class="container display-f j-space-between">
+          <p class="footer__copyright font-sm">
+            &copy; Zavier Essentials 2022. All Rights Reserved
+          </p>
+          <div class="footer__social-links font-lg">
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="bundle.js"></script>
+  </body>
+</html>
