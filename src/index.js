@@ -3,8 +3,6 @@ import {
   getFirestore,
   collection,
   addDoc,
-  doc,
-  getDoc,
   onSnapshot,
 } from 'firebase/firestore'
 
@@ -193,7 +191,7 @@ const validateLastName = () => {
 const validatEmail = () => {
   let valid = false
   const userEmail = email.value
-  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$/
+  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$/ // name@example.com
 
   if (!required(userEmail)) {
     showError(email, 'Email cannot be empty')
