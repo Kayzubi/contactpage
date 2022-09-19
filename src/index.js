@@ -38,9 +38,10 @@ const database = getFirestore()
 // Reference collection from firestore
 const colReference = collection(database, 'messages')
 
-// get documents in collection when ever change is appllied
+// get documents in collection when ever change is applied
 onSnapshot(colReference, (snapshot) => {
   // show loading
+  table.style.visibility = 'hidden'
   loader.style.display = 'block'
 
   // delay table load for 1 second
@@ -70,6 +71,7 @@ onSnapshot(colReference, (snapshot) => {
 
     // remove loading state
     loader.style.display = 'none'
+    table.style.visibility = 'visible'
   }, 1000)
 })
 
@@ -131,7 +133,7 @@ contactForm.addEventListener('input', (e) => {
 //show error
 const showError = (input, message) => {
   //get the form group ellement
-  const element = input.parentElement
+  const element = input.parentElement.parentElement
 
   // add error class to input element
   input.classList.add('error')
@@ -146,7 +148,7 @@ const showError = (input, message) => {
 //show success
 const showSuccess = (input) => {
   //get the form group element
-  const element = input.parentElement
+  const element = input.parentElement.parentElement
 
   // add success class to input element
   input.classList.remove('error')

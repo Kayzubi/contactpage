@@ -1,0 +1,46 @@
+.contact-us {
+  background-color: $grey-light-1;
+  text-align: center;
+  padding: $base-padding * 2 0;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $primary;
+  }
+}
+
+#contactus {
+  padding: $base-padding * 4 0;
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem 1rem 1.5rem 0;
+
+  h4 {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 2px;
+      height: 4px;
+      width: 40%;
+      background-color: $primary;
+    }
+  }
+
+  small {
+    color: $error;
+    font-size: $font-size-sm;
+    font-weight: 400;
+  }
+
+  @include sm {
+    padding: 1.5rem 0;
+  }
+}

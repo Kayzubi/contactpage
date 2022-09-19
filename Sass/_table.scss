@@ -1,0 +1,32 @@
+.displayMessages {
+  overflow: auto;
+  height: 100%;
+}
+
+.table {
+  font-size: 1.3rem;
+  visibility: hidden;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+
+  th {
+    min-width: 12rem;
+    max-width: 100%;
+    padding: $base-padding;
+    text-align: left;
+    background-color: $primary;
+    color: $white;
+  }
+
+  td {
+    padding: 1rem;
+  }
+}

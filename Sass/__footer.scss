@@ -1,0 +1,59 @@
+.footer {
+  font-size: 1.3rem;
+  margin-top: 10rem;
+  background-color: $grey-light-1;
+  padding-top: $base-padding * 10;
+
+  &__logo {
+    font-weight: 700;
+    font-size: $font-size-lg;
+    color: $primary;
+
+    @include md {
+      font-size: 2rem;
+    }
+  }
+
+  &__note {
+    margin-top: 2rem;
+    line-height: 1.5rem;
+  }
+
+  &__lower {
+    margin-top: 5rem;
+    padding-bottom: $base-padding * 4;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include sm {
+        display: block;
+      }
+    }
+
+    .social-link {
+      font-size: $font-size-xl;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}

@@ -1,12 +1,20 @@
-.btn-submit {
-  width: 90%;
-  margin: 0 auto;
-  padding: 2rem;
-  font-size: 2rem;
-  display: block;
-}
+// abstracts
+@import 'abstract/breakpoints';
+@import 'abstract/mixins';
+@import 'abstract/variables';
 
-.displayMessages {
-  overflow-x: auto;
-  width: 100%;
-}
+// base
+@import 'base/base';
+@import 'base/typography';
+
+// components
+@import './buttons';
+@import './form';
+@import './loader';
+@import './navigation';
+@import './table';
+
+// layout
+@import './contatus';
+@import './grid';
+@import './_footer';

@@ -1,0 +1,51 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: $base-padding $base-padding * 2;
+    border-radius: $base-border-radius;
+    border: none;
+    transition: all 0.2s;
+    font-size: $base-font-size;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &--primary {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &--text {
+    &:link,
+    &:visited {
+      border: 1px solid $primary;
+      color: $primary;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+
+    &:active {
+      box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+      transform: translateY(0);
+    }
+  }
+}

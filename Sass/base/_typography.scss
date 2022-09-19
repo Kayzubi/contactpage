@@ -1,0 +1,29 @@
+p {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.heading {
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: 0.2rem;
+  color: $primary;
+
+  @include md {
+    margin-bottom: 2rem;
+  }
+
+  &-primary {
+    font-size: $font-size-xl;
+  }
+  &-secondary {
+    font-size: $font-size-lg;
+  }
+}
+
+.heading-light {
+  font-weight: 200;
+  margin-bottom: 3rem;
+  letter-spacing: 1rem;
+}

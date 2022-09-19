@@ -14,101 +14,137 @@
   </head>
   <body>
     <header class="header">
-      <nav class="navbar-primary">
+      <nav class="navigation">
         <div class="container">
-          <a href="index.html" class="navbar__logo">Zaviercard</a>
-          <div class="navbar-collapse">
-            <ul class="navbar__links">
-              <li class="nav-item">
-                <a href="#" class="nav-link"></a>Features
+          <a href="index.html" class="navigation__logo">Zaviercard</a>
+
+          <!-- checkbox hack -->
+          <input
+            type="checkbox"
+            class="navigation__checkbox"
+            id="navigation__toggle" />
+          <label for="navigation__toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+          </label>
+
+          <!-- collapsible navbar -->
+          <div class="navigation__collapse">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="#" class="navigation__link"></a>Features
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link"></a>Products
+              <li class="navigation__item">
+                <a href="#" class="navigation__link"></a>Products
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link active"></a>Contact Us
+              <li class="navigation__item active">
+                <a href="#" class="navigation__link"></a>Contact Us
               </li>
             </ul>
-            <a href="#" class="btn btn-transparent">Log In</a>
-            <a href="#" class="btn btn-secondary">Sign Up</a>
+            <a href="#" class="btn btn--text">Log In</a>
+            <a href="#" class="btn btn--primary">Sign Up</a>
           </div>
         </div>
       </nav>
     </header>
+    <div class="contact-us"><h2>Contact us</h2></div>
 
     <!-- Contact us section -->
     <section id="contactus">
       <div class="container">
         <div class="row">
-          <div class="col-6-lg">
-            <h2 class="heading-secondary text-primary">Contact Us</h2>
-            <p class="text">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              veniam animi dignissimos quibusdam totam hic veritatis nihil
-              repellat nostrum voluptates.
-            </p>
+          <div class="col-1-of-2">
+            <div class="intro">
+              <h4>Write to Us</h4>
+              <small>Fields marked with * are required</small>
+            </div>
             <form action="#" class="form contact-form">
-              <div class="form__group">
-                <input
-                  type="text"
-                  id="firstname"
-                  name="firstname"
-                  class="form__input"
-                  placeholder="First name" />
-                <label for="firstname" class="form__label">First name</label>
-                <span class="error-message"></span>
+              <div class="form__family">
+                <label class="form__label">*Name:</label>
+                <div class="row">
+                  <div class="col-1-of-2">
+                    <div class="form__group">
+                      <div class="form__wrapper">
+                        <input
+                          type="text"
+                          id="firstname"
+                          name="firstname"
+                          class="form__input"
+                          placeholder="First name" />
+                      </div>
+                      <span class="error-message"></span>
+                    </div>
+                  </div>
+                  <div class="col-1-of-2">
+                    <div class="form__group">
+                      <div class="form__wrapper">
+                        <input
+                          type="text"
+                          id="lastname"
+                          name="lastname"
+                          class="form__input"
+                          placeholder="Last name" />
+                      </div>
+                      <span class="error-message"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="form__group">
-                <input
-                  type="text"
-                  id="lastname"
-                  name="lastname"
-                  class="form__input"
-                  placeholder="Last name" />
-                <label for="lastname" class="form__label">Last name</label>
-                <span class="error-message"></span>
+              <div class="form__family">
+                <label class="form__label">*Contact: </label>
+                <div class="row">
+                  <div class="col-1-of-2">
+                    <div class="form__group">
+                      <div class="form__wrapper">
+                        <input
+                          type="text"
+                          id="email"
+                          name="email"
+                          class="form__input"
+                          placeholder="Email" />
+                      </div>
+                      <span class="error-message"></span>
+                    </div>
+                  </div>
+                  <div class="col-1-of-2">
+                    <div class="form__group">
+                      <div class="form__wrapper">
+                        <span class="country-code">+234</span>
+                        <input
+                          type="number"
+                          id="phone"
+                          name="phone"
+                          class="form__input"
+                          placeholder="Phone number" />
+                      </div>
+                      <span class="error-message"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="form__group">
-                <label for="email" class="form__label">Email</label>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  class="form__input"
-                  placeholder="Email" />
-                <span class="error-message"></span>
+              <div class="form__family">
+                <label for="message" class="form__label"
+                  >*Leave a message:</label
+                >
+                <div class="form__group">
+                  <div class="form__wrapper">
+                    <textarea
+                      name="message"
+                      id="message"
+                      cols="50"
+                      rows="10"
+                      placeholder="Your message here"
+                      class="form__input"></textarea>
+                  </div>
+                  <span class="error-message"></span>
+                </div>
               </div>
-              <div class="form__group">
-                <label for="phone" class="form__label">Phone number</label>
-                <input
-                  type="number"
-                  id="phone"
-                  name="phone"
-                  class="form__input"
-                  placeholder="Phone number" />
-                <span class="error-message"></span>
-              </div>
-              <div class="form__group">
-                <label for="message" class="form__label">Leave a message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  cols="50"
-                  rows="10"
-                  placeholder="Your message here"
-                  class="form__input"></textarea>
-                <span class="error-message"></span>
-              </div>
-              <button
-                type="submit"
-                id="submit-btn"
-                class="btn btn-primary btn-submit">
+              <button type="submit" id="submit-btn" class="btn btn--primary">
                 Submit
               </button>
             </form>
           </div>
-          <div class="col-6-lg">
-            <h2 class="heading-secondary text-primary">
+          <div class="col-1-of-2">
+            <h2 class="heading heading-secondary">
               Messages <span class="message-count">(0)</span>
               <div class="load-spinner load-spinner-small"></div>
             </h2>
@@ -132,16 +168,16 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-3-lg col-6-md col-12-sm">
+          <div class="col-1-of-4">
             <a href="index.html" class="footer__logo">Zaviercard</a>
-            <p class="footer__note mt-2 font-sm">
+            <p class="footer__note">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab et,
               eos non deleniti ad necessitatibus quae soluta illo delectus ea.
             </p>
           </div>
-          <div class="col-3-lg col-6-md col-12-sm">
+          <div class="col-1-of-4">
             <h4 class="heading">Zaviercard</h4>
-            <ul class="site__map">
+            <ul class="map">
               <li class="map-item"><a href="#" class="map-link">Product</a></li>
               <li class="map-item">
                 <a href="#" class="map-link">Features</a>
@@ -152,9 +188,9 @@
               <li class="map-item"><a href="#" class="map-link">Login</a></li>
             </ul>
           </div>
-          <div class="col-3-lg col-6-md col-12-sm">
+          <div class="col-1-of-4">
             <h4 class="heading">Company</h4>
-            <ul class="site__map">
+            <ul class="map">
               <li class="map-item">
                 <a href="#" class="map-link">About Us</a>
               </li>
@@ -164,9 +200,9 @@
               </li>
             </ul>
           </div>
-          <div class="col-3-lg col-6-md col-12-sm">
+          <div class="col-1-of-4">
             <h4 class="heading">Help and support</h4>
-            <ul class="site__map-list">
+            <ul class="map">
               <li class="map-item"><a href="#" class="map-link">Support</a></li>
               <li class="map-item">
                 <a href="#" class="map-link">Contact Us</a>
