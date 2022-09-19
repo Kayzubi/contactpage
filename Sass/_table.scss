@@ -7,7 +7,8 @@
   font-size: 1.3rem;
   visibility: hidden;
   border-collapse: collapse;
-  table-layout: fixed;
+  // table-layout: fixed;
+  max-width: 100%;
 
   tr:nth-child(even) {
     background-color: #f2f2f2;
@@ -19,7 +20,6 @@
 
   th {
     min-width: 12rem;
-    max-width: 100%;
     padding: $base-padding;
     text-align: left;
     background-color: $primary;

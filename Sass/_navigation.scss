@@ -93,7 +93,7 @@
       cursor: pointer;
       position: relative;
       color: $grey-dark;
-
+      width: 50%;
       &.active {
         color: $primary;
         &::after {

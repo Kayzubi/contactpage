@@ -44,7 +44,7 @@ onSnapshot(colReference, (snapshot) => {
   table.style.visibility = 'hidden'
   loader.style.display = 'block'
 
-  // delay table load for 1 second
+  // delay table load for 2 seconds
   setTimeout(() => {
     tablebody.innerHTML = ''
     let messages = []
@@ -72,7 +72,7 @@ onSnapshot(colReference, (snapshot) => {
     // remove loading state
     loader.style.display = 'none'
     table.style.visibility = 'visible'
-  }, 1000)
+  }, 1500)
 })
 
 // add messages from form to firestore.
