@@ -130,7 +130,7 @@ contactForm.addEventListener('input', (e) => {
 
 //show error
 const showError = (input, message) => {
-  //get the form group ellement
+  //get the form group element
   const element = input.parentElement.parentElement
 
   // add error class to input element
@@ -208,7 +208,7 @@ const validatEmail = () => {
 const validatePhone = () => {
   let valid = false
   const userPhone = phone.value
-  const re = /^0[789]\d{9}$/ // Must match a Nigerian phone number
+  const re = /^0[789][01]\d{8}$/ // Must match a Nigerian phone number
 
   if (!required(userPhone)) {
     showError(phone, 'Phone number cannot be empty')
