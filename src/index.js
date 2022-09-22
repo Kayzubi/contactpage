@@ -27,32 +27,24 @@ const userMessage = document.getElementById('message')
 const submitBtn = document.getElementById('submit-btn')
 const loader = document.querySelector('.load-spinner')
 
-// init firebase
 initializeApp(firebaseConfig)
 
-// init firestore
 const database = getFirestore()
 
-// Reference collection from firestore
-const colReference = collection(database, 'messages')
+const collectionReference = collection(database, 'messages')
 
-// get documents in collection when ever change is applied
-onSnapshot(colReference, (snapshot) => {
-  // show loading
+onSnapshot(collectionReference, (snapshot) => {
   table.style.visibility = 'hidden'
   loader.style.display = 'block'
 
-  // delay table load for 2 seconds
   setTimeout(() => {
     tablebody.innerHTML = ''
     let messages = []
-    // add documents to messages array
     for (const doc of snapshot.docs) {
       messages.push({ ...doc.data(), id: doc.id })
     }
     messageCount.innerHTML = '(' + messages.length + ')'
 
-    // create row for each document and append to table
     messages.forEach((message) => {
       const row = document.createElement('tr')
       row.id = message.id
@@ -67,17 +59,14 @@ onSnapshot(colReference, (snapshot) => {
       tablebody.append(row)
     })
 
-    // remove loading state
     loader.style.display = 'none'
     table.style.visibility = 'visible'
   }, 1500)
 })
 
-// add messages from form to firestore.
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  // // check if all form fields are valid
   let validFirstName = validateFirstName(),
     validLastName = validateLastName(),
     validEmail = validatEmail(),
@@ -88,18 +77,15 @@ contactForm.addEventListener('submit', (e) => {
     validFirstName && validLastName && validEmail && validPhone && validMessage
 
   if (formValid) {
-    // disable submit button
     submitBtn.innerText = 'Submiting...'
     submitBtn.disabled = true
 
-    // add form values to firstore database
     addDoc(colReference, {
       name: `${contactForm.firstname.value} ${contactForm.lastname.value}`,
       email: contactForm.email.value,
       phone: contactForm.phone.value,
       message: contactForm.message.value,
     }).then(() => {
-      // reset form
       contactForm.reset()
       submitBtn.innerText = 'Submit'
       submitBtn.disabled = false
@@ -107,7 +93,6 @@ contactForm.addEventListener('submit', (e) => {
   }
 })
 
-// validate input fields on input
 contactForm.addEventListener('input', (e) => {
   switch (e.target.id) {
     case 'firstname':
@@ -128,36 +113,27 @@ contactForm.addEventListener('input', (e) => {
   }
 })
 
-//show error
 const showError = (input, message) => {
-  //get the form group element
-  const element = input.parentElement.parentElement
+  const formGroup = input.parentElement.parentElement
 
-  // add error class to input element
   input.classList.add('error')
   input.classList.remove('success')
   input.focus()
 
-  // use parent element to set error message
-  const errorMessage = element.querySelector('.error-message')
+  const errorMessage = formGroup.querySelector('.error-message')
   errorMessage.innerHTML = `<span>${message}</span> <i class="fa-solid fa-circle-exclamation"></i>`
 }
 
-//show success
 const showSuccess = (input) => {
-  //get the form group element
-  const element = input.parentElement.parentElement
+  const formGroup = input.parentElement.parentElement
 
-  // add success class to input element
   input.classList.remove('error')
   input.classList.add('success')
 
-  // use parent element to clear error message
-  const errorMessage = element.querySelector('.error-message')
+  const errorMessage = formGroup.querySelector('.error-message')
   errorMessage.textContent = ''
 }
 
-// check for valid First name
 const validateFirstName = () => {
   let valid = false
   const userFirstName = firstName.value
@@ -172,7 +148,6 @@ const validateFirstName = () => {
   return valid
 }
 
-// check for valid Last name
 const validateLastName = () => {
   let valid = false
   const userLastName = lastName.value
@@ -187,11 +162,10 @@ const validateLastName = () => {
   return valid
 }
 
-// check for valid email address
 const validatEmail = () => {
   let valid = false
   const userEmail = email.value
-  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$/ // name@example.com
+  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$/
 
   if (!required(userEmail)) {
     showError(email, 'Email cannot be empty')
@@ -204,7 +178,6 @@ const validatEmail = () => {
   return valid
 }
 
-// check for valid phone number
 const validatePhone = () => {
   let valid = false
   const userPhone = phone.value
@@ -221,7 +194,6 @@ const validatePhone = () => {
   return valid
 }
 
-// check for valid message
 const validateMessage = () => {
   let valid = false
   const message = userMessage.value
@@ -236,7 +208,4 @@ const validateMessage = () => {
   return valid
 }
 
-// check if input is a required field
 const required = (value) => (value !== '' ? true : false)
-
-// console.log(required('ccvv'))
